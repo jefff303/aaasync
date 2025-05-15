@@ -1,4 +1,4 @@
-# Astro Starter Kit: Blog
+# AÅASYNC: Blog
 
 ```sh
 pnpm create astro@latest -- --template blog
