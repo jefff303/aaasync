@@ -21,4 +21,4 @@ Nous sommes déterminés à offrir les meilleurs services possibles à nos clien
 
 N'hésitez pas à nous contacter pour discuter de la manière dont nous pouvons vous aider à développer votre entreprise en ligne. Nous sommes impatients de travailler avec vous!
 
-_Équipe AÅASYNC Consulting_
+_Équipe AÅASYNC
