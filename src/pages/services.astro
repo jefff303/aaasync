@@ -5,81 +5,118 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 
-// Données des services (vous pourrez les personnaliser)
+// Données des services
 const services = [
   {
     title: "Développement Web",
     description: "Création de sites web modernes, réactifs et optimisés pour les moteurs de recherche, adaptés à vos besoins spécifiques.",
-    icon: "laptop-code",
-    color: "indigo"
+    icon: "computer",
+    color: "primary"
   },
   {
     title: "Applications Mobiles",
     description: "Développement d'applications mobiles natives et hybrides pour iOS et Android, offrant une expérience utilisateur exceptionnelle.",
-    icon: "mobile-screen",
-    color: "purple"
+    icon: "device-mobile",
+    color: "secondary"
   },
   {
     title: "Conseil en Technologie",
     description: "Expertise stratégique pour vous aider à prendre les meilleures décisions technologiques pour votre entreprise.",
-    icon: "lightbulb",
-    color: "blue"
+    icon: "light-bulb",
+    color: "accent"
   },
   {
     title: "E-commerce",
     description: "Solutions e-commerce complètes avec gestion des paiements, inventaire et expérience d'achat optimisée.",
     icon: "shopping-cart",
-    color: "pink"
+    color: "info"
   },
   {
     title: "Optimisation SEO",
     description: "Amélioration de votre visibilité en ligne grâce à des stratégies SEO éprouvées et des analyses de données approfondies.",
-    icon: "magnifying-glass-chart",
-    color: "green"
+    icon: "magnifying-glass",
+    color: "success"
   },
   {
     title: "Support Technique",
     description: "Assistance technique continue et maintenance pour garantir le bon fonctionnement de vos solutions numériques.",
-    icon: "headset",
-    color: "amber"
+    icon: "phone",
+    color: "warning"
   }
 ];
 ---
 
 <!doctype html>
-<html lang="fr">
+<html lang="fr" data-theme="light">
   <head>
     <BaseHead title={`Services | ${SITE_TITLE}`} description="Découvrez notre gamme complète de services numériques pour propulser votre entreprise." />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   </head>
-  <body class="bg-gray-50">
+  <body>
     <Header />
     
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
-      <div class="container mx-auto px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold mb-6">Nos Services</h1>
-        <p class="text-xl max-w-3xl mx-auto opacity-90">
-          Des solutions numériques innovantes pour transformer votre vision en réalité
-        </p>
+    <section class="hero bg-gradient-to-r from-primary to-secondary text-primary-content py-20">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Nos Services</h1>
+          <p class="text-xl opacity-90">
+            Des solutions numériques innovantes pour transformer votre vision en réalité
+          </p>
+        </div>
       </div>
     </section>
     
     <!-- Services Section -->
-    <section class="py-16 px-4">
+    <section class="py-16 px-4 bg-base-100">
       <div class="container mx-auto">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map(service => (
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
-              <div class={`bg-${service.color}-100 p-6 flex justify-center`}>
-                <i class={`fas fa-${service.icon} text-4xl text-${service.color}-600`}></i>
-              </div>
-              <div class="p-6">
-                <h3 class="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
-                <p class="text-gray-600">{service.description}</p>
-                <a href="#" class={`inline-block mt-4 text-${service.color}-600 hover:text-${service.color}-800 font-medium`}>
-                  En savoir plus <i class="fas fa-arrow-right ml-1"></i>
-                </a>
+            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+              <div class="card-body">
+                <div class={`w-16 h-16 rounded-full bg-${service.color}/20 flex items-center justify-center mb-4`}>
+                  <span class={`text-${service.color}`}>
+                    {service.icon === "computer" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                      </svg>
+                    )}
+                    {service.icon === "device-mobile" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                      </svg>
+                    )}
+                    {service.icon === "light-bulb" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                      </svg>
+                    )}
+                    {service.icon === "shopping-cart" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                      </svg>
+                    )}
+                    {service.icon === "magnifying-glass" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                      </svg>
+                    )}
+                    {service.icon === "phone" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                    )}
+                  </span>
+                </div>
+                <h3 class="card-title text-xl font-bold">{service.title}</h3>
+                <p class="text-base-content/70">{service.description}</p>
+                <div class="card-actions justify-start mt-4">
+                  <a href="#" class={`btn btn-${service.color} btn-outline btn-sm`}>
+                    En savoir plus
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                </div>
               </div>
             </div>
           ))}
@@ -87,18 +124,91 @@ const services = [
       </div>
     </section>
     
+    <!-- Process Section -->
+    <section class="py-16 px-4 bg-base-200">
+      <div class="container mx-auto">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl font-bold mb-4">Notre processus de travail</h2>
+          <p class="text-base-content/70 max-w-2xl mx-auto">
+            Une approche méthodique pour garantir des résultats exceptionnels à chaque projet
+          </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+          <ul class="steps steps-vertical lg:steps-horizontal w-full">
+            <li class="step step-primary">Consultation</li>
+            <li class="step step-primary">Planification</li>
+            <li class="step step-primary">Conception</li>
+            <li class="step">Développement</li>
+            <li class="step">Tests</li>
+            <li class="step">Déploiement</li>
+          </ul>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 max-w-4xl mx-auto">
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <h3 class="card-title">
+                <span class="badge badge-primary mr-2">1</span>
+                Consultation
+              </h3>
+              <p class="text-base-content/70">
+                Nous commençons par comprendre vos besoins, objectifs et défis spécifiques pour établir une vision claire du projet.
+              </p>
+            </div>
+          </div>
+          
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <h3 class="card-title">
+                <span class="badge badge-primary mr-2">2</span>
+                Planification
+              </h3>
+              <p class="text-base-content/70">
+                Nous élaborons une feuille de route détaillée avec des jalons clairs, des délais et des livrables pour assurer une exécution sans faille.
+              </p>
+            </div>
+          </div>
+          
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <h3 class="card-title">
+                <span class="badge badge-primary mr-2">3</span>
+                Conception
+              </h3>
+              <p class="text-base-content/70">
+                Nous créons des maquettes et des prototypes pour visualiser l'apparence et le fonctionnement de votre solution avant le développement.
+              </p>
+            </div>
+          </div>
+          
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <h3 class="card-title">
+                <span class="badge badge-secondary mr-2">4</span>
+                Développement
+              </h3>
+              <p class="text-base-content/70">
+                Notre équipe d'experts transforme les concepts en réalité en utilisant les technologies les plus adaptées à votre projet.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
     <!-- CTA Section -->
-    <section class="bg-gray-900 text-white py-16">
+    <section class="bg-neutral text-neutral-content py-16">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-6">Prêt à collaborer avec nous?</h2>
-        <p class="text-lg max-w-2xl mx-auto mb-8 text-gray-300">
+        <p class="text-lg max-w-2xl mx-auto mb-8 opacity-80">
           Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nos services peuvent vous aider à atteindre vos objectifs.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+          <a href="/contact" class="btn btn-primary">
             Nous contacter
           </a>
-          <a href="/about" class="bg-transparent hover:bg-white/10 text-white border border-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+          <a href="/about" class="btn btn-outline btn-primary">
             En savoir plus
           </a>
         </div>
@@ -106,72 +216,84 @@ const services = [
     </section>
     
     <!-- Testimonials Section -->
-    <section class="py-16 px-4 bg-gray-50">
+    <section class="py-16 px-4 bg-base-100">
       <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Ce que nos clients disent</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow">
-            <div class="flex items-center mb-4">
-              <div class="text-yellow-400 flex">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
+        <h2 class="text-3xl font-bold text-center mb-12">Ce que nos clients disent</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <div class="flex items-center mb-4">
+                <div class="rating rating-sm">
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                </div>
               </div>
-            </div>
-            <p class="text-gray-600 mb-4">"Une équipe exceptionnelle qui a transformé notre présence en ligne. Leur expertise en développement web a dépassé toutes nos attentes."</p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center">
-                <span class="text-indigo-600 font-bold">MC</span>
-              </div>
-              <div class="ml-3">
-                <h4 class="font-bold">Marie Curie</h4>
-                <p class="text-sm text-gray-500">Directrice, Innovations Scientifiques</p>
-              </div>
-            </div>
-          </div>
-          
-          <div class="bg-white p-6 rounded-lg shadow">
-            <div class="flex items-center mb-4">
-              <div class="text-yellow-400 flex">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-              </div>
-            </div>
-            <p class="text-gray-600 mb-4">"Leur approche stratégique du SEO a considérablement augmenté notre trafic organique. Résultats impressionnants en seulement quelques mois."</p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center">
-                <span class="text-purple-600 font-bold">TE</span>
-              </div>
-              <div class="ml-3">
-                <h4 class="font-bold">Thomas Edison</h4>
-                <p class="text-sm text-gray-500">Fondateur, Lumière Électrique Inc.</p>
+              <p class="text-base-content/70 mb-4">"Une équipe exceptionnelle qui a transformé notre présence en ligne. Leur expertise en développement web a dépassé toutes nos attentes."</p>
+              <div class="flex items-center">
+                <div class="avatar placeholder mr-3">
+                  <div class="bg-primary text-primary-content rounded-full w-12">
+                    <span>MC</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold">Marie Curie</h4>
+                  <p class="text-sm text-base-content/50">Directrice, Innovations Scientifiques</p>
+                </div>
               </div>
             </div>
           </div>
           
-          <div class="bg-white p-6 rounded-lg shadow">
-            <div class="flex items-center mb-4">
-              <div class="text-yellow-400 flex">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <div class="flex items-center mb-4">
+                <div class="rating rating-sm">
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                </div>
+              </div>
+              <p class="text-base-content/70 mb-4">"Leur approche stratégique du SEO a considérablement augmenté notre trafic organique. Résultats impressionnants en seulement quelques mois."</p>
+              <div class="flex items-center">
+                <div class="avatar placeholder mr-3">
+                  <div class="bg-secondary text-secondary-content rounded-full w-12">
+                    <span>TE</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold">Thomas Edison</h4>
+                  <p class="text-sm text-base-content/50">Fondateur, Lumière Électrique Inc.</p>
+                </div>
               </div>
             </div>
-            <p class="text-gray-600 mb-4">"L'application mobile qu'ils ont développée pour notre entreprise a révolutionné notre façon d'interagir avec nos clients. Un travail remarquable!"</p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center">
-                <span class="text-green-600 font-bold">AL</span>
+          </div>
+          
+          <div class="card bg-base-100 shadow-lg">
+            <div class="card-body">
+              <div class="flex items-center mb-4">
+                <div class="rating rating-sm">
+                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                </div>
               </div>
-              <div class="ml-3">
-                <h4 class="font-bold">Ada Lovelace</h4>
-                <p class="text-sm text-gray-500">CTO, Algorithmes Analytiques</p>
+              <p class="text-base-content/70 mb-4">"L'application mobile qu'ils ont développée pour notre entreprise a révolutionné notre façon d'interagir avec nos clients. Un travail remarquable!"</p>
+              <div class="flex items-center">
+                <div class="avatar placeholder mr-3">
+                  <div class="bg-green-200 text-green-600 rounded-full w-12">
+                    <span>AL</span>
+                  </div>
+                </div>
+                <div>
+                  <h4 class="font-bold">Ada Lovelace</h4>
+                  <p class="text-sm text-base-content/50">CTO, Algorithmes Analytiques</p>
+                </div>
               </div>
             </div>
           </div>
