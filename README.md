@@ -1,4 +1,4 @@
-# AÅASYNC: Blog
+# AÅASYNC: Website
 
 ```sh
 pnpm create astro@latest -- --template blog
