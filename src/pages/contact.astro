@@ -1,0 +1,399 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead
+      title={`Contact | ${SITE_TITLE}`}
+      description="Contactez notre équipe pour discuter de votre projet ou pour toute question."
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <Header />
+
+    <!-- Hero Section -->
+    <section
+      class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16"
+    >
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">Contactez-nous</h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90">
+          Nous sommes là pour répondre à vos questions et vous aider à
+          concrétiser vos projets
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="py-16 px-4">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          <!-- Formulaire de contact -->
+          <div class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+              Envoyez-nous un message
+            </h2>
+
+            <form id="contact-form" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label
+                    for="firstName"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Prénom</label
+                  >
+                  <input
+                    type="text"
+                    id="firstName"
+                    name="firstName"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    required
+                  />
+                </div>
+                <div>
+                  <label
+                    for="lastName"
+                    class="block text-sm font-medium text-gray-700 mb-1"
+                    >Nom</label
+                  >
+                  <input
+                    type="text"
+                    id="lastName"
+                    name="lastName"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                  required
+                />
+              </div>
+
+              <div>
+                <label
+                  for="subject"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Sujet</label
+                >
+                <select
+                  id="subject"
+                  name="subject"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                  required
+                >
+                  <option value="" disabled selected>Choisissez un sujet</option
+                  >
+                  <option value="devis">Demande de devis</option>
+                  <option value="information">Demande d'information</option>
+                  <option value="support">Support technique</option>
+                  <option value="partenariat">Proposition de partenariat</option
+                  >
+                  <option value="autre">Autre</option>
+                </select>
+              </div>
+
+              <div>
+                <label
+                  for="message"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Message</label
+                >
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="5"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                  required></textarea>
+              </div>
+
+              <div class="flex items-start">
+                <input
+                  type="checkbox"
+                  id="privacy"
+                  name="privacy"
+                  class="mt-1 h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded"
+                  required
+                />
+                <label for="privacy" class="ml-2 block text-sm text-gray-700">
+                  J'accepte que mes données soient traitées conformément à la <a
+                    href="#"
+                    class="text-indigo-600 hover:text-indigo-800"
+                    >politique de confidentialité</a
+                  >.
+                </label>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+                  class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md transition-colors duration-300 flex items-center justify-center"
+                >
+                  <span>Envoyer le message</span>
+                  <i class="fas fa-paper-plane ml-2"></i>
+                </button>
+              </div>
+            </form>
+
+            <div
+              id="success-message"
+              class="hidden mt-6 p-4 bg-green-100 text-green-700 rounded-md"
+            >
+              Votre message a été envoyé avec succès. Nous vous répondrons dans
+              les plus brefs délais.
+            </div>
+
+            <div
+              id="error-message"
+              class="hidden mt-6 p-4 bg-red-100 text-red-700 rounded-md"
+            >
+              Une erreur s'est produite lors de l'envoi du message. Veuillez
+              réessayer plus tard.
+            </div>
+          </div>
+
+          <!-- Informations de contact -->
+          <div class="lg:pl-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">
+              Nos coordonnées
+            </h2>
+
+            <div class="space-y-8">
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                  <i class="fas fa-map-marker-alt text-indigo-600 text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold text-gray-800">Adresse</h3>
+                  <p class="text-gray-600 mt-1">
+                    123 Avenue des Développeurs<br />
+                    75000 Paris, France
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                  <i class="fas fa-phone-alt text-indigo-600 text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold text-gray-800">Téléphone</h3>
+                  <p class="text-gray-600 mt-1">
+                    <a
+                      href="tel:+33123456789"
+                      class="hover:text-indigo-600 transition-colors"
+                      >+33 1 23 45 67 89</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                  <i class="fas fa-envelope text-indigo-600 text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold text-gray-800">Email</h3>
+                  <p class="text-gray-600 mt-1">
+                    <a
+                      href="mailto:contact@votreentreprise.com"
+                      class="hover:text-indigo-600 transition-colors"
+                      >contact@votreentreprise.com</a
+                    >
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div class="flex-shrink-0 bg-indigo-100 p-3 rounded-full">
+                  <i class="fas fa-clock text-indigo-600 text-xl"></i>
+                </div>
+                <div class="ml-4">
+                  <h3 class="text-lg font-semibold text-gray-800">
+                    Horaires d'ouverture
+                  </h3>
+                  <p class="text-gray-600 mt-1">
+                    Lundi - Vendredi: 9h00 - 18h00<br />
+                    Samedi - Dimanche: Fermé
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Carte -->
+            <div class="mt-10">
+              <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                Nous trouver
+              </h3>
+              <div class="h-64 bg-gray-200 rounded-lg overflow-hidden">
+                <!-- Remplacez par votre iframe Google Maps -->
+                <div
+                  class="w-full h-full flex items-center justify-center bg-gray-300"
+                >
+                  <p class="text-gray-600">Carte Google Maps à intégrer ici</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Réseaux sociaux -->
+            <div class="mt-10">
+              <h3 class="text-lg font-semibold text-gray-800 mb-4">
+                Suivez-nous
+              </h3>
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="bg-indigo-100 hover:bg-indigo-200 text-indigo-600 p-3 rounded-full transition-colors"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-indigo-100 hover:bg-indigo-200 text-indigo-600 p-3 rounded-full transition-colors"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-indigo-100 hover:bg-indigo-200 text-indigo-600 p-3 rounded-full transition-colors"
+                >
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a
+                  href="#"
+                  class="bg-indigo-100 hover:bg-indigo-200 text-indigo-600 p-3 rounded-full transition-colors"
+                >
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 px-4 bg-gray-100">
+      <div class="container mx-auto max-w-4xl">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">
+          Questions fréquentes
+        </h2>
+
+        <div class="space-y-6">
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Quel est le délai de réponse à ma demande ?
+            </h3>
+            <p class="text-gray-600">
+              Nous nous efforçons de répondre à toutes les demandes dans un
+              délai de 24 à 48 heures ouvrables.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Comment se déroule un projet avec votre entreprise ?
+            </h3>
+            <p class="text-gray-600">
+              Après un premier contact, nous organisons une réunion de
+              découverte pour comprendre vos besoins. Nous établissons ensuite
+              un devis détaillé avant de commencer le développement selon une
+              méthodologie agile.
+            </p>
+          </div>
+
+          <div class="bg-white rounded-lg shadow-md p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">
+              Proposez-vous un service de maintenance après la livraison ?
+            </h3>
+            <p class="text-gray-600">
+              Oui, nous offrons différentes formules de maintenance et de
+              support technique pour assurer le bon fonctionnement de votre
+              solution sur le long terme.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <Footer />
+
+    <script>
+      import emailjs from "@emailjs/browser";
+
+      // Initialise EmailJS avec votre User ID
+      emailjs.init("gD7h8SDVuvocVCRXY"); // Remplacez par votre User ID EmailJS
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          // Afficher l'état de chargement
+          const submitButton = document.querySelector('button[type="submit"]');
+          const originalButtonContent = submitButton.innerHTML;
+          submitButton.disabled = true;
+          submitButton.innerHTML =
+            '<i class="fas fa-spinner fa-spin mr-2"></i> Envoi en cours...';
+
+          // Envoyer l'e-mail avec EmailJS
+          emailjs
+            .sendForm("service_gmail", "template_contact_form", this)
+            .then(
+              function (response) {
+                // Afficher le message de succès
+                document
+                  .getElementById("success-message")
+                  .classList.remove("hidden");
+                document.getElementById("contact-form").reset();
+
+                // Cacher le message après 5 secondes
+                setTimeout(() => {
+                  document
+                    .getElementById("success-message")
+                    .classList.add("hidden");
+                }, 5000);
+              },
+              function (error) {
+                // Afficher le message d'erreur
+                document
+                  .getElementById("error-message")
+                  .classList.remove("hidden");
+
+                // Cacher le message après 5 secondes
+                setTimeout(() => {
+                  document
+                    .getElementById("error-message")
+                    .classList.add("hidden");
+                }, 5000);
+              }
+            )
+            .finally(() => {
+              // Réinitialiser le bouton
+              submitButton.disabled = false;
+              submitButton.innerHTML = originalButtonContent;
+            });
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE } from '../consts';
+
+// Données des services (vous pourrez les personnaliser)
+const services = [
+  {
+    title: "Développement Web",
+    description: "Création de sites web modernes, réactifs et optimisés pour les moteurs de recherche, adaptés à vos besoins spécifiques.",
+    icon: "laptop-code",
+    color: "indigo"
+  },
+  {
+    title: "Applications Mobiles",
+    description: "Développement d'applications mobiles natives et hybrides pour iOS et Android, offrant une expérience utilisateur exceptionnelle.",
+    icon: "mobile-screen",
+    color: "purple"
+  },
+  {
+    title: "Conseil en Technologie",
+    description: "Expertise stratégique pour vous aider à prendre les meilleures décisions technologiques pour votre entreprise.",
+    icon: "lightbulb",
+    color: "blue"
+  },
+  {
+    title: "E-commerce",
+    description: "Solutions e-commerce complètes avec gestion des paiements, inventaire et expérience d'achat optimisée.",
+    icon: "shopping-cart",
+    color: "pink"
+  },
+  {
+    title: "Optimisation SEO",
+    description: "Amélioration de votre visibilité en ligne grâce à des stratégies SEO éprouvées et des analyses de données approfondies.",
+    icon: "magnifying-glass-chart",
+    color: "green"
+  },
+  {
+    title: "Support Technique",
+    description: "Assistance technique continue et maintenance pour garantir le bon fonctionnement de vos solutions numériques.",
+    icon: "headset",
+    color: "amber"
+  }
+];
+---
+
+<!doctype html>
+<html lang="fr">
+  <head>
+    <BaseHead title={`Services | ${SITE_TITLE}`} description="Découvrez notre gamme complète de services numériques pour propulser votre entreprise." />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  </head>
+  <body class="bg-gray-50">
+    <Header />
+    
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-20">
+      <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-6">Nos Services</h1>
+        <p class="text-xl max-w-3xl mx-auto opacity-90">
+          Des solutions numériques innovantes pour transformer votre vision en réalité
+        </p>
+      </div>
+    </section>
+    
+    <!-- Services Section -->
+    <section class="py-16 px-4">
+      <div class="container mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {services.map(service => (
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+              <div class={`bg-${service.color}-100 p-6 flex justify-center`}>
+                <i class={`fas fa-${service.icon} text-4xl text-${service.color}-600`}></i>
+              </div>
+              <div class="p-6">
+                <h3 class="text-xl font-bold mb-3 text-gray-800">{service.title}</h3>
+                <p class="text-gray-600">{service.description}</p>
+                <a href="#" class={`inline-block mt-4 text-${service.color}-600 hover:text-${service.color}-800 font-medium`}>
+                  En savoir plus <i class="fas fa-arrow-right ml-1"></i>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="bg-gray-900 text-white py-16">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Prêt à collaborer avec nous?</h2>
+        <p class="text-lg max-w-2xl mx-auto mb-8 text-gray-300">
+          Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nos services peuvent vous aider à atteindre vos objectifs.
+        </p>
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <a href="/contact" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+            Nous contacter
+          </a>
+          <a href="/about" class="bg-transparent hover:bg-white/10 text-white border border-white font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+            En savoir plus
+          </a>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4 bg-gray-50">
+      <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Ce que nos clients disent</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">"Une équipe exceptionnelle qui a transformé notre présence en ligne. Leur expertise en développement web a dépassé toutes nos attentes."</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-indigo-200 rounded-full flex items-center justify-center">
+                <span class="text-indigo-600 font-bold">MC</span>
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Marie Curie</h4>
+                <p class="text-sm text-gray-500">Directrice, Innovations Scientifiques</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">"Leur approche stratégique du SEO a considérablement augmenté notre trafic organique. Résultats impressionnants en seulement quelques mois."</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center">
+                <span class="text-purple-600 font-bold">TE</span>
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Thomas Edison</h4>
+                <p class="text-sm text-gray-500">Fondateur, Lumière Électrique Inc.</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="bg-white p-6 rounded-lg shadow">
+            <div class="flex items-center mb-4">
+              <div class="text-yellow-400 flex">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+            <p class="text-gray-600 mb-4">"L'application mobile qu'ils ont développée pour notre entreprise a révolutionné notre façon d'interagir avec nos clients. Un travail remarquable!"</p>
+            <div class="flex items-center">
+              <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center">
+                <span class="text-green-600 font-bold">AL</span>
+              </div>
+              <div class="ml-3">
+                <h4 class="font-bold">Ada Lovelace</h4>
+                <p class="text-sm text-gray-500">CTO, Algorithmes Analytiques</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <Footer />
+    
+    <script>
+      // Fix pour les classes dynamiques de Tailwind
+      // Comme Tailwind utilise la purge CSS, nous devons explicitement inclure les classes dynamiques
+      const colorClasses = [
+        'bg-indigo-100', 'text-indigo-600', 'text-indigo-800',
+        'bg-purple-100', 'text-purple-600', 'text-purple-800',
+        'bg-blue-100', 'text-blue-600', 'text-blue-800',
+        'bg-pink-100', 'text-pink-600', 'text-pink-800',
+        'bg-green-100', 'text-green-600', 'text-green-800',
+        'bg-amber-100', 'text-amber-600', 'text-amber-800'
+      ];
+    </script>
+  </body>
+</html>
+
