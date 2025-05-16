@@ -65,4 +65,4 @@ Check out [our documentation](https://docs.astro.build) or jump into our [Discor
 
 ## Credit
 
-AAASYNC
+AAASYNC.
