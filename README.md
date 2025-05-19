@@ -59,8 +59,7 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
 ## 👀 Want to learn more?
-
-Check out [our documentation](https://docs.astro.build)
+---
 
 ## Credit
 
