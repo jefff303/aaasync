@@ -1,0 +1,130 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <BaseHead
+      title={`Politique de confidentialité | ${SITE_TITLE}`}
+      description="Politique de confidentialité et de protection des données personnelles de AÅASYNC Consulting."
+    />
+  </head>
+  <body>
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-r from-primary to-secondary text-primary-content py-12">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-4xl font-bold mb-2">Politique de confidentialité</h1>
+          <p class="opacity-90">
+            Protection de vos données personnelles
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-12 px-4">
+      <div class="container mx-auto max-w-3xl prose">
+        <h2 class="text-2xl font-bold mb-4">Introduction</h2>
+        <p>
+          Chez AÅASYNC Consulting, nous accordons une grande importance à la protection de vos données personnelles. Cette politique de confidentialité vous informe de la manière dont nous collectons, utilisons et protégeons vos informations lorsque vous utilisez notre site web et nos services.
+        </p>
+        <p>
+          En utilisant notre site web <a href="https://aaasync.vercel.app" class="link link-primary">aaasync.vercel.app</a>, vous acceptez les pratiques décrites dans la présente politique de confidentialité.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Données collectées</h2>
+        <p>
+          Nous pouvons collecter les types d'informations suivants :
+        </p>
+        <ul>
+          <li><strong>Informations personnelles</strong> : nom, prénom, adresse e-mail, numéro de téléphone, et autres informations que vous nous fournissez volontairement via notre formulaire de contact ou lors de vos échanges avec nous.</li>
+          <li><strong>Données de navigation</strong> : adresse IP, type de navigateur, pages visitées, temps passé sur le site, date et heure de la visite, et autres statistiques anonymes.</li>
+          <li><strong>Cookies</strong> : notre site utilise des cookies pour améliorer votre expérience de navigation. Vous pouvez configurer votre navigateur pour refuser tous les cookies ou pour être averti lorsqu'un cookie est envoyé.</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Utilisation des données</h2>
+        <p>
+          Les informations que nous collectons sont utilisées pour :
+        </p>
+        <ul>
+          <li>Répondre à vos demandes et vous fournir les services demandés</li>
+          <li>Personnaliser votre expérience et répondre à vos besoins individuels</li>
+          <li>Améliorer notre site web et nos services</li>
+          <li>Vous contacter au sujet de nos services, événements ou offres spéciales (si vous avez consenti à recevoir ces communications)</li>
+          <li>Respecter nos obligations légales et réglementaires</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Protection des données</h2>
+        <p>
+          Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos données personnelles contre tout accès non autorisé, altération, divulgation ou destruction. Ces mesures comprennent des protections techniques, administratives et physiques adaptées à la nature des informations que nous traitons.
+        </p>
+        <p>
+          Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est totalement sécurisée. Nous ne pouvons donc pas garantir une sécurité absolue.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Partage des données</h2>
+        <p>
+          Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers sans votre consentement, sauf dans les cas suivants :
+        </p>
+        <ul>
+          <li>Lorsque cela est nécessaire pour fournir un service que vous avez demandé</li>
+          <li>Pour nous conformer à une obligation légale</li>
+          <li>Pour protéger nos droits, notre propriété ou notre sécurité, ou ceux de nos utilisateurs ou du public</li>
+          <li>En cas de fusion, acquisition ou vente d'actifs, auquel cas vous serez informé par e-mail ou par un avis bien visible sur notre site web de tout changement de propriétaire ou d'utilisation de vos informations personnelles</li>
+        </ul>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Durée de conservation</h2>
+        <p>
+          Nous conservons vos données personnelles uniquement pendant la durée nécessaire aux finalités pour lesquelles elles ont été collectées, conformément à nos obligations légales et réglementaires.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Vos droits</h2>
+        <p>
+          Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants concernant vos données personnelles :
+        </p>
+        <ul>
+          <li>Droit d'accès à vos données</li>
+          <li>Droit de rectification des données inexactes</li>
+          <li>Droit à l'effacement de vos données (« droit à l'oubli »)</li>
+          <li>Droit à la limitation du traitement</li>
+          <li>Droit à la portabilité des données</li>
+          <li>Droit d'opposition au traitement</li>
+          <li>Droit de ne pas faire l'objet d'une décision fondée exclusivement sur un traitement automatisé</li>
+        </ul>
+        <p>
+          Pour exercer ces droits ou pour toute question concernant le traitement de vos données personnelles, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:privacy@aaasync.com" class="link link-primary">privacy@aaasync.com</a>.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Modifications de la politique de confidentialité</h2>
+        <p>
+          Nous nous réservons le droit de modifier cette politique de confidentialité à tout moment. Toute modification sera publiée sur cette page avec une date de mise à jour. Nous vous encourageons à consulter régulièrement cette page pour rester informé des éventuelles modifications.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Contact</h2>
+        <p>
+          Si vous avez des questions concernant cette politique de confidentialité, vous pouvez nous contacter :
+        </p>
+        <p>
+          <strong>AÅASYNC Consulting</strong><br />
+          [Adresse de l'entreprise]<br />
+          [Code postal et ville]<br />
+          France<br />
+          <strong>Email :</strong> <a href="mailto:privacy@aaasync.com" class="link link-primary">privacy@aaasync.com</a>
+        </p>
+
+        <p class="mt-8 text-sm text-base-content/60">
+          Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', {day: 'numeric', month: 'long', year: 'numeric'})}
+        </p>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>

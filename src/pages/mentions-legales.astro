@@ -1,0 +1,102 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<!doctype html>
+<html lang="fr" data-theme="light">
+  <head>
+    <BaseHead
+      title={`Mentions Légales | ${SITE_TITLE}`}
+      description="Mentions légales et informations juridiques concernant AÅASYNC Consulting."
+    />
+  </head>
+  <body>
+    <Header />
+
+    <!-- Hero Section -->
+    <section class="hero bg-gradient-to-r from-primary to-secondary text-primary-content py-12">
+      <div class="hero-content text-center">
+        <div class="max-w-md">
+          <h1 class="text-4xl font-bold mb-2">Mentions Légales</h1>
+          <p class="opacity-90">
+            Informations juridiques concernant AÅASYNC Consulting
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-12 px-4">
+      <div class="container mx-auto max-w-3xl prose">
+        <h2 class="text-2xl font-bold mb-4">Éditeur du site</h2>
+        <p>
+          Le site web <a href="https://aaasync.vercel.app" class="link link-primary">aaasync.vercel.app</a> est édité par :
+        </p>
+        <p>
+          <strong>AÅASYNC Consulting</strong><br />
+          [Adresse de l'entreprise]<br />
+          [Code postal et ville]<br />
+          France
+        </p>
+        <p>
+          <strong>SIRET :</strong> [Numéro SIRET]<br />
+          <strong>Capital social :</strong> [Montant] euros<br />
+          <strong>Directeur de la publication :</strong> [Nom du directeur]<br />
+          <strong>Contact :</strong> <a href="mailto:contact@aaasync.com" class="link link-primary">contact@aaasync.com</a>
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Hébergement</h2>
+        <p>
+          Ce site est hébergé par :
+        </p>
+        <p>
+          <strong>Vercel Inc.</strong><br />
+          340 S Lemon Ave #4133<br />
+          Walnut, CA 91789<br />
+          États-Unis
+        </p>
+        <p>
+          <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" class="link link-primary">https://vercel.com</a>
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Propriété intellectuelle</h2>
+        <p>
+          L'ensemble du contenu de ce site (structure, textes, logos, images, photographies, vidéos, sons, etc.) est la propriété exclusive de AÅASYNC Consulting ou de ses partenaires. Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie des éléments du site, quel que soit le moyen ou le procédé utilisé, est interdite, sauf autorisation écrite préalable de AÅASYNC Consulting.
+        </p>
+        <p>
+          Toute exploitation non autorisée du site ou de son contenu sera considérée comme constitutive d'une contrefaçon et poursuivie conformément aux dispositions des articles L.335-2 et suivants du Code de Propriété Intellectuelle.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Liens hypertextes</h2>
+        <p>
+          Le site <a href="https://aaasync.vercel.app" class="link link-primary">aaasync.vercel.app</a> peut contenir des liens hypertextes vers d'autres sites internet ou d'autres ressources disponibles sur Internet. AÅASYNC Consulting ne dispose d'aucun moyen pour contrôler les sites en connexion avec son site internet et ne répond pas de la disponibilité de tels sites et sources externes.
+        </p>
+        <p>
+          AÅASYNC Consulting ne peut être tenue pour responsable de tout dommage, de quelque nature que ce soit, résultant du contenu de ces sites ou sources externes.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Limitation de responsabilité</h2>
+        <p>
+          AÅASYNC Consulting s'efforce de fournir sur son site des informations aussi précises que possible. Toutefois, elle ne pourra être tenue responsable des omissions, des inexactitudes et des carences dans la mise à jour, qu'elles soient de son fait ou du fait des tiers partenaires qui lui fournissent ces informations.
+        </p>
+        <p>
+          Toutes les informations indiquées sur le site sont données à titre indicatif, et sont susceptibles d'évoluer. Par ailleurs, les renseignements figurant sur le site ne sont pas exhaustifs. Ils sont donnés sous réserve de modifications ayant été apportées depuis leur mise en ligne.
+        </p>
+
+        <h2 class="text-2xl font-bold mt-8 mb-4">Droit applicable et juridiction compétente</h2>
+        <p>
+          Les présentes mentions légales sont régies par le droit français. En cas de litige, les tribunaux français seront seuls compétents.
+        </p>
+
+        <p class="mt-8 text-sm text-base-content/60">
+          Dernière mise à jour : {new Date().toLocaleDateString('fr-FR', {day: 'numeric', month: 'long', year: 'numeric'})}
+        </p>
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>
