@@ -2,7 +2,7 @@
 title: "Le lancement de AÅASYNC Consulting : une histoire de passion et de croissance"
 description: "Découvrez l'histoire de notre entreprise naissante, passionnée par la technologie et les solutions humaines pour transformer vos ambitions en réalité"
 pubDate: 'May 10 2025'
-heroImage: '/blog-placeholder-5.jpg'
+heroImage: '/blog-placeholder-5.webp'
 ---
 
 

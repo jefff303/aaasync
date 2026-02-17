@@ -2,7 +2,7 @@
 title: 'Bienvenue chez AÅASYNC Consulting'
 description: 'Découvrez notre expertise en développement web, consulting, gestion de projet, cybersécurité et intelligence artificielle'
 pubDate: 'May 08 2025'
-heroImage: '/blog-placeholder-3.jpg'
+heroImage: '/blog-placeholder-3.webp'
 ---
 
 Nous sommes heureux de vous accueillir au sein de notre agence web, AÅASYNC Consulting. Nous nous spécialisons dans la création d'applications web et mobiles, le consulting, le conseil auprès des entreprises, la gestion de projets, la cybersécurité et l'intelligence artificielle.

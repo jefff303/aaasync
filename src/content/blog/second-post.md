@@ -2,7 +2,7 @@
 title: "Allier humain et technologie : notre vision du digital chez AÅASYNC"
 description: "Découvrez comment notre agence place l'humain au cœur de chaque projet digital pour créer des solutions sur mesure et durables"
 pubDate: 'May 09 2025'
-heroImage: '/blog-placeholder-2.jpg'
+heroImage: '/blog-placeholder-2.webp'
 ---
 
 Chez AÅASYNC Consulting, nous croyons fermement que la technologie n’a de sens que si elle sert l’humain. C’est cette conviction qui guide notre travail au quotidien, dans chacun des projets que nous menons.
