@@ -2,7 +2,7 @@
 title: "Lancement de notre Librairie PHP de Nouvelle Génération"
 description: "Découvrez l'outil conçu par AÅASYNC pour booster vos développements PHP : rapidité, sécurité et architecture moderne au programme."
 pubDate: 'Jan 5 2026'
-heroImage: '/aaasync-lib-php.webp'
+heroImage: '/blog-lib-php.webp'
 ---
 
 Chez **AÅASYNC Consulting**, notre mission est de transformer des idées en solutions durables. C'est dans cet esprit d'innovation que nous avons développé notre propre **Librairie PHP de Nouvelle Génération**. Conçue pour répondre aux exigences des développeurs modernes, elle allie une architecture robuste à une simplicité d'utilisation déconcertante.
