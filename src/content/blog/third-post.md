@@ -2,7 +2,7 @@
 title: "Le lancement de AÅASYNC Consulting : une histoire de passion et de croissance"
 description: "Découvrez l'histoire de notre entreprise naissante, passionnée par la technologie et les solutions humaines pour transformer vos ambitions en réalité"
 pubDate: 'May 10 2025'
-heroImage: '/blog-placeholder-5.webp'
+heroImage: '/blog-placeholder-5.avif'
 ---
 
 
@@ -14,7 +14,7 @@ Notre aventure commence au cœur d'une passion commune : **transformer des idée
 
 ## Les débuts
 
-Lorsque nous avons lancé notre agence, nos premiers défis étaient autant techniques que humains. Comment allier expertise technique et écoute des besoins des clients ? Comment créer un environnement de travail où chaque membre de l'équipe puisse s'exprimer et innover ? 
+Lorsque nous avons lancé notre agence, nos premiers défis étaient autant techniques que humains. Comment allier expertise technique et écoute des besoins des clients ? Comment créer un environnement de travail où chaque membre de l'équipe puisse s'exprimer et innover ?
 
 Nous avons choisi un modèle collaboratif : **une équipe petite mais experte**, où chaque développeur, consultant en cybersécurité ou spécialiste en IA a une voix dans la prise de décision. Nous avons aussi investi dans des outils modernes (comme Astro et Tailwind) pour offrir des solutions rapides et adaptatives.
 
