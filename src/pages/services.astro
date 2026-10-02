@@ -1,47 +1,114 @@
-
 ---
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE } from '../consts';
 
-// Données des services
-const services = [
+// Vos 4 Piliers de Services Rationalisés
+const pillars = [
   {
-    title: "Développement Web",
-    description: "Création de sites web modernes, réactifs et optimisés pour les moteurs de recherche, adaptés à vos besoins spécifiques.",
-    icon: "computer",
-    color: "primary"
+    id: "audit",
+    title: "1. Audit & Diagnostic",
+    subtitle: "Le Check-Up Digital & Tech",
+    description: "Identifiez les freins, sécurisez vos choix techniques et mettez vos applications en conformité avant d'investir.",
+    badge: "Accroche & Diagnostic",
+    badgeClass: "badge-primary",
+    borderClass: "border-primary",
+    iconBgClass: "bg-primary/10 text-primary",
+    btnClass: "btn-primary",
+    icon: "search",
+    features: [
+      "Audit Flash Existant (Offert)",
+      "Conformité RGPD, RGAA (Accessibilité) & Facturation",
+      "Audit Cybersécurité & Robustesse d'architecture",
+      "Audit Workflow & Opportunités IA"
+    ],
+    ctaText: "Demander un audit offert",
+    ctaLink: "/contact?service=audit"
   },
   {
-    title: "Applications Mobiles",
-    description: "Développement d'applications mobiles natives et hybrides pour iOS et Android, offrant une expérience utilisateur exceptionnelle.",
-    icon: "device-mobile",
-    color: "secondary"
+    id: "studio",
+    title: "2. Développement Sur-Mesure",
+    subtitle: "Le Studio d'Ingénierie",
+    description: "Conception de produits digitaux d'exception. Des applications web et mobiles ultra-performantes et évolutives.",
+    badge: "Ingénierie Web & Mobile",
+    badgeClass: "badge-secondary",
+    borderClass: "border-secondary",
+    iconBgClass: "bg-secondary/10 text-secondary",
+    btnClass: "btn-secondary",
+    icon: "code",
+    features: [
+      "Business Modeling & Cadrage de besoins",
+      "Développement Web & Mobile Next-Gen",
+      "Architecture Scalable & Sécurité intégrée",
+      "Maintenance & Forfait Sérénité"
+    ],
+    ctaText: "Lancer un projet",
+    ctaLink: "/contact?service=studio"
   },
   {
-    title: "Conseil en Technologie",
-    description: "Expertise stratégique pour vous aider à prendre les meilleures décisions technologiques pour votre entreprise.",
-    icon: "light-bulb",
-    color: "accent"
+    id: "ia",
+    title: "3. IA & Automatisations",
+    subtitle: "Le Lab Workflows Intelligents",
+    description: "Gagnez des centaines d'heures. Intégrez l'intelligence artificielle au cœur de vos processus opérationnels.",
+    badge: "Productivité & IA",
+    badgeClass: "badge-accent",
+    borderClass: "border-accent",
+    iconBgClass: "bg-accent/10 text-accent",
+    btnClass: "btn-accent",
+    icon: "cpu",
+    features: [
+      "Workflows métier automatisés de A à Z",
+      "Prompt Engineering & Modèles IA personnalisés",
+      "Automatisations Webmarketing & Réseaux sociaux",
+      "Intégrations API & Élimination des tâches manuelles"
+    ],
+    ctaText: "Automatiser vos processus",
+    ctaLink: "/contact?service=ia"
   },
   {
-    title: "E-commerce",
-    description: "Solutions e-commerce complètes avec gestion des paiements, inventaire et expérience d'achat optimisée.",
-    icon: "shopping-cart",
-    color: "info"
+    id: "academie",
+    title: "4. Formation & Accompagnement",
+    subtitle: "L'Académie & CTO-as-a-Service",
+    description: "Montez en compétences et faites-vous accompagner par des experts techniques pédagogues sans embaucher à plein temps.",
+    badge: "Autonomie & Direction Tech",
+    badgeClass: "badge-info",
+    borderClass: "border-info",
+    iconBgClass: "bg-info/10 text-info",
+    btnClass: "btn-info",
+    icon: "academic",
+    features: [
+      "CTO as a Service (Abonnement souple sans engagement)",
+      "Formations techniques sur-mesure pour vos équipes",
+      "Accompagnement IA pour collaborateurs & développeurs",
+      "Mentorat, revue de code & transfert de compétences"
+    ],
+    ctaText: "Découvrir l'accompagnement",
+    ctaLink: "/contact?service=academie"
+  }
+];
+
+// Étapes de votre accompagnement
+const processSteps = [
+  {
+    number: "1",
+    title: "Audit & Diagnostic",
+    description: "Nous analysons votre existant, vos contraintes et vos objectifs pour établir un diagnostic clair."
   },
   {
-    title: "Optimisation SEO",
-    description: "Amélioration de votre visibilité en ligne grâce à des stratégies SEO éprouvées et des analyses de données approfondies.",
-    icon: "magnifying-glass",
-    color: "success"
+    number: "2",
+    title: "Architecture & Stratégie",
+    description: "Nous définissons la meilleure approche technique, le cadrage budgétaire et les jalons du projet."
   },
   {
-    title: "Support Technique",
-    description: "Assistance technique continue et maintenance pour garantir le bon fonctionnement de vos solutions numériques.",
-    icon: "phone",
-    color: "warning"
+    number: "3",
+    title: "Réalisation / Automatisation",
+    description: "Nous développons votre solution ou vos automatisations avec les meilleures technologies du marché."
+  },
+  {
+    number: "4",
+    title: "Formation & Transfert",
+    description: "Nous formons vos équipes pour vous garantir une autonomie totale et une prise en main immédiate."
   }
 ];
 ---
@@ -49,7 +116,10 @@ const services = [
 <!doctype html>
 <html lang="fr" data-theme="light">
   <head>
-    <BaseHead title={`Services | ${SITE_TITLE}`} description="Découvrez notre gamme complète de services numériques pour propulser votre entreprise." />
+    <BaseHead 
+      title={`Nos Services & Expertise | ${SITE_TITLE}`} 
+      description="Développement sur-mesure, audits techniques, automatisations IA et formations : découvrez notre gamme complète de services." 
+    />
   </head>
   <body>
     <Header />
@@ -57,63 +127,75 @@ const services = [
     <!-- Hero Section -->
     <section class="hero bg-gradient-to-r from-primary to-secondary text-primary-content py-20">
       <div class="hero-content text-center">
-        <div class="max-w-md">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6">Nos Services</h1>
-          <p class="text-xl opacity-90">
-            Des solutions numériques innovantes pour transformer votre vision en réalité
+        <div class="max-w-2xl">
+          <span class="badge badge-outline text-primary-content mb-4 p-3 font-semibold uppercase tracking-wider">
+            L'Exigence Technique + La Pédagogie
+          </span>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-6">
+            Nos Domaines d'Expertise
+          </h1>
+          <p class="text-xl opacity-90 leading-relaxed">
+            De l'audit à la réalisation, jusqu'à la formation de vos équipes : des solutions globales pour propulser votre entreprise.
           </p>
         </div>
       </div>
     </section>
     
-    <!-- Services Section -->
+    <!-- 4 Piliers de Services Section -->
     <section class="py-16 px-4 bg-base-100">
-      <div class="container mx-auto">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map(service => (
-            <div class="card bg-base-100 shadow-xl hover:shadow-2xl transition-shadow duration-300">
+      <div class="container mx-auto max-w-6xl">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {pillars.map(pillar => (
+            <div class={`card bg-base-100 border-t-4 ${pillar.borderClass} shadow-xl hover:shadow-2xl transition-all duration-300 flex flex-col justify-between`}>
               <div class="card-body">
-                <div class={`w-16 h-16 rounded-full bg-${service.color}/20 flex items-center justify-center mb-4`}>
-                  <span class={`text-${service.color}`}>
-                    {service.icon === "computer" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                <div class="flex items-center justify-between mb-2">
+                  <span class={`badge ${pillar.badgeClass} p-3 font-medium`}>{pillar.badge}</span>
+                  <div class={`w-12 h-12 rounded-xl ${pillar.iconBgClass} flex items-center justify-center`}>
+                    {pillar.icon === "search" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                       </svg>
                     )}
-                    {service.icon === "device-mobile" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    {pillar.icon === "code" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                       </svg>
                     )}
-                    {service.icon === "light-bulb" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                    {pillar.icon === "cpu" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2z" />
                       </svg>
                     )}
-                    {service.icon === "shopping-cart" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                    {pillar.icon === "academic" && (
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" />
                       </svg>
                     )}
-                    {service.icon === "magnifying-glass" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                      </svg>
-                    )}
-                    {service.icon === "phone" && (
-                      <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                      </svg>
-                    )}
-                  </span>
+                  </div>
                 </div>
-                <h3 class="card-title text-xl font-bold">{service.title}</h3>
-                <p class="text-base-content/70">{service.description}</p>
-                <div class="card-actions justify-start mt-4">
-                  <a href="#" class={`btn btn-${service.color} btn-outline btn-sm`}>
-                    En savoir plus
+
+                <h3 class="card-title text-2xl font-bold mt-2">{pillar.title}</h3>
+                <p class="text-sm font-semibold opacity-70 mb-2">{pillar.subtitle}</p>
+                <p class="text-base-content/80 mb-4">{pillar.description}</p>
+                
+                <div class="divider my-2"></div>
+                
+                <ul class="space-y-2 mb-6">
+                  {pillar.features.map(feature => (
+                    <li class="flex items-start text-sm">
+                      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-success mr-2 flex-shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                      </svg>
+                      <span>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="card-actions justify-start mt-auto pt-4">
+                  <a href={pillar.ctaLink} class={`btn ${pillar.btnClass} w-full`}>
+                    {pillar.ctaText}
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                     </svg>
                   </a>
                 </div>
@@ -124,92 +206,54 @@ const services = [
       </div>
     </section>
     
-    <!-- Process Section -->
+    <!-- Notre Approche Hybride Section -->
     <section class="py-16 px-4 bg-base-200">
-      <div class="container mx-auto">
+      <div class="container mx-auto max-w-5xl">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-bold mb-4">Notre processus de travail</h2>
+          <h2 class="text-3xl font-bold mb-4">Notre Méthodologie en 4 Étapes</h2>
           <p class="text-base-content/70 max-w-2xl mx-auto">
-            Une approche méthodique pour garantir des résultats exceptionnels à chaque projet
+            Une approche combinant rigueur d'ingénierie et transmission de compétences pour garantir la pérennité de vos projets.
           </p>
         </div>
         
-        <div class="max-w-4xl mx-auto">
+        <div class="mb-12">
           <ul class="steps steps-vertical lg:steps-horizontal w-full">
-            <li class="step step-primary">Consultation</li>
-            <li class="step step-primary">Planification</li>
-            <li class="step step-primary">Conception</li>
-            <li class="step">Développement</li>
-            <li class="step">Tests</li>
-            <li class="step">Déploiement</li>
+            <li class="step step-primary">Audit</li>
+            <li class="step step-primary">Cadrage</li>
+            <li class="step step-primary">Réalisation</li>
+            <li class="step step-primary">Transmission</li>
           </ul>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-16 max-w-4xl mx-auto">
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h3 class="card-title">
-                <span class="badge badge-primary mr-2">1</span>
-                Consultation
-              </h3>
-              <p class="text-base-content/70">
-                Nous commençons par comprendre vos besoins, objectifs et défis spécifiques pour établir une vision claire du projet.
-              </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {processSteps.map(step => (
+            <div class="card bg-base-100 shadow-md hover:shadow-lg transition-shadow">
+              <div class="card-body">
+                <h3 class="card-title text-lg">
+                  <span class="badge badge-primary badge-lg mr-2">{step.number}</span>
+                  {step.title}
+                </h3>
+                <p class="text-base-content/70 text-sm">{step.description}</p>
+              </div>
             </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h3 class="card-title">
-                <span class="badge badge-primary mr-2">2</span>
-                Planification
-              </h3>
-              <p class="text-base-content/70">
-                Nous élaborons une feuille de route détaillée avec des jalons clairs, des délais et des livrables pour assurer une exécution sans faille.
-              </p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h3 class="card-title">
-                <span class="badge badge-primary mr-2">3</span>
-                Conception
-              </h3>
-              <p class="text-base-content/70">
-                Nous créons des maquettes et des prototypes pour visualiser l'apparence et le fonctionnement de votre solution avant le développement.
-              </p>
-            </div>
-          </div>
-          
-          <div class="card bg-base-100 shadow-lg">
-            <div class="card-body">
-              <h3 class="card-title">
-                <span class="badge badge-secondary mr-2">4</span>
-                Développement
-              </h3>
-              <p class="text-base-content/70">
-                Notre équipe d'experts transforme les concepts en réalité en utilisant les technologies les plus adaptées à votre projet.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
     
-    <!-- CTA Section -->
+    <!-- CTA Banner Section -->
     <section class="bg-neutral text-neutral-content py-16">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Prêt à collaborer avec nous?</h2>
-        <p class="text-lg max-w-2xl mx-auto mb-8 opacity-80">
-          Contactez-nous dès aujourd'hui pour discuter de votre projet et découvrir comment nos services peuvent vous aider à atteindre vos objectifs.
+      <div class="container mx-auto px-4 text-center max-w-3xl">
+        <h2 class="text-3xl font-bold mb-4">Un projet en tête ou besoin d'y voir plus clair ?</h2>
+        <p class="text-lg mb-8 opacity-80">
+          Commencez par un **Audit Flash gratuit**. Nous analysons votre existant et nous vous proposons une feuille de route sans aucun engagement.
         </p>
         <div class="flex flex-col sm:flex-row justify-center gap-4">
-          <a href="/contact" class="btn btn-primary">
-            Nous contacter
+          <a href="/contact?service=audit" class="btn btn-primary btn-lg">
+            Réserver un Audit Gratuit
           </a>
-          <a href="/about" class="btn btn-outline btn-primary">
-            En savoir plus
+          <a href="/contact" class="btn btn-outline btn-primary btn-lg">
+            Discuter de mon projet
           </a>
         </div>
       </div>
@@ -217,104 +261,86 @@ const services = [
     
     <!-- Testimonials Section -->
     <section class="py-16 px-4 bg-base-100">
-      <div class="container mx-auto">
-        <h2 class="text-3xl font-bold text-center mb-12">Ce que nos clients disent</h2>
+      <div class="container mx-auto max-w-6xl">
+        <h2 class="text-3xl font-bold text-center mb-12">Ils nous font confiance</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div class="card bg-base-100 shadow-lg">
+          
+          <div class="card bg-base-100 shadow-lg border border-base-200">
             <div class="card-body">
-              <div class="flex items-center mb-4">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
-                </div>
+              <div class="rating rating-sm mb-4">
+                <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-1" class="mask mask-star-2 bg-warning" checked />
               </div>
-              <p class="text-base-content/70 mb-4">"Une équipe exceptionnelle qui a transformé notre présence en ligne. Leur expertise en développement web a dépassé toutes nos attentes."</p>
-              <div class="flex items-center">
+              <p class="text-base-content/80 text-sm mb-6">"L'audit gratuit d'AÅASYNC nous a ouvert les yeux sur plusieurs failles de sécurité et soucis d'accessibilité. Leur travail sur notre application sur-mesure a été impeccable."</p>
+              <div class="flex items-center mt-auto">
                 <div class="avatar placeholder mr-3">
-                  <div class="bg-primary text-primary-content rounded-full w-12">
-                    <span>MC</span>
+                  <div class="bg-primary text-primary-content rounded-full w-10">
+                    <span class="text-xs font-bold">MC</span>
                   </div>
                 </div>
                 <div>
-                  <h4 class="font-bold">Marie Curie</h4>
-                  <p class="text-sm text-base-content/50">Directrice, Innovations Scientifiques</p>
+                  <h4 class="font-bold text-sm">Marc C.</h4>
+                  <p class="text-xs text-base-content/60">Fondateur Tech & SaaS</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="card bg-base-100 shadow-lg">
+          <div class="card bg-base-100 shadow-lg border border-base-200">
             <div class="card-body">
-              <div class="flex items-center mb-4">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
-                </div>
+              <div class="rating rating-sm mb-4">
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-2" class="mask mask-star-2 bg-warning" checked />
               </div>
-              <p class="text-base-content/70 mb-4">"Leur approche stratégique du SEO a considérablement augmenté notre trafic organique. Résultats impressionnants en seulement quelques mois."</p>
-              <div class="flex items-center">
+              <p class="text-base-content/80 text-sm mb-6">"Leur capacité à automatiser nos workflows internes avec l'IA nous fait gagner plus de 15 heures par semaine. Et en plus, ils ont pris le temps de former toute l'équipe !"</p>
+              <div class="flex items-center mt-auto">
                 <div class="avatar placeholder mr-3">
-                  <div class="bg-secondary text-secondary-content rounded-full w-12">
-                    <span>TE</span>
+                  <div class="bg-secondary text-secondary-content rounded-full w-10">
+                    <span class="text-xs font-bold">SL</span>
                   </div>
                 </div>
                 <div>
-                  <h4 class="font-bold">Thomas Edison</h4>
-                  <p class="text-sm text-base-content/50">Fondateur, Lumière Électrique Inc.</p>
+                  <h4 class="font-bold text-sm">Sophie L.</h4>
+                  <p class="text-xs text-base-content/60">Directrice Opérationnelle</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div class="card bg-base-100 shadow-lg">
+          <div class="card bg-base-100 shadow-lg border border-base-200">
             <div class="card-body">
-              <div class="flex items-center mb-4">
-                <div class="rating rating-sm">
-                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
-                  <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
-                </div>
+              <div class="rating rating-sm mb-4">
+                <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
+                <input type="radio" name="rating-3" class="mask mask-star-2 bg-warning" checked />
               </div>
-              <p class="text-base-content/70 mb-4">"L'application mobile qu'ils ont développée pour notre entreprise a révolutionné notre façon d'interagir avec nos clients. Un travail remarquable!"</p>
-              <div class="flex items-center">
+              <p class="text-base-content/80 text-sm mb-6">"En tant que CTO as a Service, ils gèrent toute notre roadmap technique avec une clarté et une pédagogie rares. Une vraie bouffée d'air frais pour notre entreprise."</p>
+              <div class="flex items-center mt-auto">
                 <div class="avatar placeholder mr-3">
-                  <div class="bg-green-200 text-green-600 rounded-full w-12">
-                    <span>AL</span>
+                  <div class="bg-accent text-accent-content rounded-full w-10">
+                    <span class="text-xs font-bold">AR</span>
                   </div>
                 </div>
                 <div>
-                  <h4 class="font-bold">Ada Lovelace</h4>
-                  <p class="text-sm text-base-content/50">CTO, Algorithmes Analytiques</p>
+                  <h4 class="font-bold text-sm">Antoine R.</h4>
+                  <p class="text-xs text-base-content/60">CEO Agency</p>
                 </div>
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </section>
     
     <Footer />
-    
-    <script>
-      // Fix pour les classes dynamiques de Tailwind
-      // Comme Tailwind utilise la purge CSS, nous devons explicitement inclure les classes dynamiques
-      const colorClasses = [
-        'bg-indigo-100', 'text-indigo-600', 'text-indigo-800',
-        'bg-purple-100', 'text-purple-600', 'text-purple-800',
-        'bg-blue-100', 'text-blue-600', 'text-blue-800',
-        'bg-pink-100', 'text-pink-600', 'text-pink-800',
-        'bg-green-100', 'text-green-600', 'text-green-800',
-        'bg-amber-100', 'text-amber-600', 'text-amber-800'
-      ];
-    </script>
   </body>
 </html>
-
